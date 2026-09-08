@@ -19,7 +19,9 @@ namespace test
 
             int max = a;
 
-           
+            if (max < b) max = b;
+            if (max < c) max = c;
+            Console.WriteLine("Максимальное число из 3: "+max);
 
 
         }
