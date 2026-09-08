@@ -16,7 +16,12 @@ namespace test
             int b = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите 3 число: ");
             int c = Convert.ToInt32(Console.ReadLine());
+
+            int max = a;
+
            
+
+
         }
     }
 }
