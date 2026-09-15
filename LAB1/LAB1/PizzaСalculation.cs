@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace LAB1
 {
-    class Program
+    class PizzaСalculation
     {
-        static void Main(string[] args)
-        {
-
-
-        }
+        
     }
 }
