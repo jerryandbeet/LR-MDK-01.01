@@ -16,7 +16,7 @@ namespace LAB1
             if (IsPizzaSize)
             {
                 int count = Convert.ToInt32(Console.ReadLine());
-                while (count != 6 || count != 8 || count != 10)
+                while (count != 6 && count != 8 && count != 10)
                 {
                     Console.Write("\nВы ввели неверное количество кусочков! Попробуйте еще раз (6, 8 или 10 кусочков): ");
                     count = Convert.ToInt32(Console.ReadLine());
