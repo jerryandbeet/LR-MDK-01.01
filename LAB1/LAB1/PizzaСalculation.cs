@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace LAB1
 {
@@ -32,5 +34,20 @@ namespace LAB1
                 return count;
             }
         }
+
+        public static void CalculateAndPrint (int guests, int slices, int size)
+        {
+            int totalSlices = guests * slices;
+            int pizzaCount = (totalSlices + size - 1) / size; //округление вверх целочисленым делением
+            int remainsSlices = (pizzaCount * size) - totalSlices;
+
+            Console.WriteLine($"\nНеобходимое количество кусков: {totalSlices}");
+            Console.WriteLine($"\nКоличество пицц: {pizzaCount}");
+            Console.WriteLine($"\nОстаток кусков: {remainsSlices}");
+
+
+        }
+
+
         }
 }
