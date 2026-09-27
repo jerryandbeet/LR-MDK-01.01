@@ -56,17 +56,17 @@
             }
             static void Main(string[] args)
             {
-                Random rand = new Random();
+                //Random rand = new Random();
                 int num = 1;
                 Dictionary<string, double[]> timeArrays = new Dictionary<string, double[]>();
 
 
                 int[] arrayOne = new int[10];
-                for (int i = 0; i < arrayOne.Length; i++)
-                {
-                    arrayOne[i] = rand.Next(0, 10000);
-                }
-                Array.Sort(arrayOne);
+                //for (int i = 0; i < arrayOne.Length; i++)
+                //{
+                //    arrayOne[i] = rand.Next(0, 10000);
+                //}
+                //Array.Sort(arrayOne);
 
                 var stopwatchOne = Stopwatch.StartNew();
                 bool resultOne = foreachement(arrayOne, num);
