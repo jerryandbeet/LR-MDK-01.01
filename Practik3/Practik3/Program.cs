@@ -10,18 +10,18 @@
     {
         internal class Program
         {
-            static bool foreachement(int[] array, int num)
+        static bool foreachement(int[] array, int num)
+        {
+            bool result = false;
+            foreach (int number in array)
             {
-                bool result = false;
-                foreach (int number in array)
-                {
-                    if (number == num) result = true;
-                }
-                return result;
-
+                if (number == num) result = true;
             }
+            return result;
 
-            static bool foreachementBinary(int[] array, int num)
+        }
+
+        static bool foreachementBinary(int[] array, int num)
             {
                 bool result = false;
                 if (array.Length > 0)
