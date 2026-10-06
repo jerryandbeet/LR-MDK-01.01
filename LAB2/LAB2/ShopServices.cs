@@ -8,7 +8,7 @@ namespace LAB2
 {
     internal class ShopServices
     {
-        public void PrintPriceList(string[] names, int[] prices, int[] stocks)
+        public static void PrintPriceList(string[] names, int[] prices, int[] stocks)
         {
             Console.WriteLine("=====Прайс лист=====");
             for (int i = 0; i < names.Length; i++)
@@ -16,6 +16,16 @@ namespace LAB2
                 Console.WriteLine($"{i+1}. {names[i]} - {prices[i]} руб., {stocks[i]} шт.");
             }
             Console.WriteLine();
+        }
+        public static void CollectOrder(int[] order, string[] names)
+        {
+            while (true)
+            {
+                int itemNumber = InputReader.ReadItemNumber("Введите номер товара (0 - конец заказа): ");
+                if (itemNumber == 0) break;
+                int quantity = InputReader.ReadQuantity("Введите количество: ");
+                order[itemNumber - 1] += quantity;
+            }
         }
     }
 }
