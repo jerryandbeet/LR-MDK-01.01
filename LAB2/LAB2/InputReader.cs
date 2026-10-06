@@ -21,6 +21,20 @@ namespace LAB2
                 Console.WriteLine("Ошибка: введите целое число от 0 до 5!!!");
             }
         }
+        public static int ReadQuantity(string prompt)
+        {
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out int quantity) && quantity >= 0)
+                {
+                    return quantity;
+                }
+                Console.WriteLine("Ошибка: количество должно быть целым неотрицательным числом!!!");
+            }
+        }
+
 
     }
     
