@@ -10,11 +10,11 @@ namespace LAB1
     {
         static void Main(string[] args)
         {
-            int guests = PizzaСalculation.ReadInt("Введите количество гостей: ", false);
-            int slices = PizzaСalculation.ReadInt("Введите количество кусков на одного человека: ", false);
-            int size = PizzaСalculation.ReadInt("Введите размер пиццы (6, 8 или 10): ", true);
+            int guests = PizzaСalculation.ReadInt("Введите количество гостей: ");
+            int slices = PizzaСalculation.ReadInt("Введите количество кусков на одного человека: ");
+            int size = PizzaСalculation.ReadPizzaSize("Введите размер пиццы (6, 8 или 10): ");
 
-            PizzaСalculation.CalculateAndPrint(guests, slices, size);
+            PizzaСalculation.Calculate(guests, slices, size);
 
 
         }

@@ -10,21 +10,10 @@ namespace LAB1
 {
     class PizzaСalculation
     {
-        public static int ReadInt(string prompt, bool IsPizzaSize)
+        public static int ReadInt(string prompt)
         {
             Console.Write(prompt);
-            if (IsPizzaSize)
-            {
-                int count = Convert.ToInt32(Console.ReadLine());
-                while (count != 6 && count != 8 && count != 10)
-                {
-                    Console.Write("\nВы ввели неверное количество кусочков! Попробуйте еще раз (6, 8 или 10 кусочков): ");
-                    count = Convert.ToInt32(Console.ReadLine());
-                }
-                return count;
-            }
-            else
-            {
+            
                 int count = Convert.ToInt32(Console.ReadLine());
                 while (count <= 0)
                 {
@@ -32,20 +21,31 @@ namespace LAB1
                     count = Convert.ToInt32(Console.ReadLine());
                 }
                 return count;
-            }
+        }
+        public static int ReadPizzaSize(string prompt)
+        {
+            Console.Write(prompt);
+                int count = Convert.ToInt32(Console.ReadLine());
+                while (count != 6 && count != 8 && count != 10)
+                {
+                    Console.Write("\nВы ввели неверное количество кусочков! Попробуйте еще раз (6, 8 или 10 кусочков): ");
+                    count = Convert.ToInt32(Console.ReadLine());
+                }
+                return count;
         }
 
-        public static void CalculateAndPrint (int guests, int slices, int size)
+        public static void Calculate (int guests, int slices, int size)
         {
             int totalSlices = guests * slices;
             int pizzaCount = (totalSlices + size - 1) / size; //округление вверх целочисленым делением
             int remainsSlices = (pizzaCount * size) - totalSlices;
-
+            Print(totalSlices, pizzaCount, remainsSlices);
+        }
+        public static void Print(int totalSlices, int pizzaCount, int remainsSlices)
+        {
             Console.WriteLine($"\nНеобходимое количество кусков: {totalSlices}");
             Console.WriteLine($"\nКоличество пицц: {pizzaCount}");
             Console.WriteLine($"\nОстаток кусков: {remainsSlices}");
-
-
         }
 
 
