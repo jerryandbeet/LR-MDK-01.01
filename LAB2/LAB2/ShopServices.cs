@@ -27,5 +27,23 @@ namespace LAB2
                 order[itemNumber - 1] += quantity;
             }
         }
+        public static void ProcessTransaction(int[] order, int[] stocks, int[] prices, string[] names)
+        {
+            for (int i = 0;i < order.Length;i++)
+            {
+                if (order[i] > stocks[i]) 
+                {
+                    Console.WriteLine($"Заказ отменен! Товара \"{names[i]}\" не хватает на складе!");
+                    return;
+                }  
+            }
+            int totalSum = 0;
+            for (int i = 0; i < order.Length; i++)
+            {
+                stocks[i]-= order[i];
+                totalSum += order[i] * prices[i];
+            }
+            Console.WriteLine($"Стоимость заказа: {totalSum} руб.");
+            }
+        }
     }
-}
