@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LAB2
 {
@@ -10,7 +6,7 @@ namespace LAB2
     {
         public static void PrintPriceList(string[] names, int[] prices, int[] stocks)
         {
-            Console.WriteLine("=====Прайс лист=====");
+            Console.WriteLine("Прайс-лист:");
             for (int i = 0; i < names.Length; i++)
             {
                 Console.WriteLine($"{i + 1}. {names[i]} - {prices[i]} руб., {stocks[i]} шт.");
@@ -48,7 +44,7 @@ namespace LAB2
 
         public static void PrintFinalStocks(string[] names, int[] stocks)
         {
-            Console.WriteLine($"Остатки на складе: ");
+            Console.Write($"Остатки на складе: ");
             for (int i = 0; i < names.Length; i++)
             {
                 Console.Write($"{names[i]} {stocks[i]}");

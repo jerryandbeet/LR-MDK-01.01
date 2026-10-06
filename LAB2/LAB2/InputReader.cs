@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LAB2
 {
@@ -12,7 +8,7 @@ namespace LAB2
         {
             while (true)
             {
-                Console.WriteLine(prompt);
+                Console.Write(prompt);
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int number) && number >= 0 && number <= 5)
                 {
@@ -25,7 +21,7 @@ namespace LAB2
         {
             while (true)
             {
-                Console.WriteLine(prompt);
+                Console.Write(prompt);
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int quantity) && quantity >= 0)
                 {
