@@ -32,5 +32,17 @@ namespace LAB3
             }
             Console.WriteLine($"Стоимость заказа: {totalsum} руб.\n");
         }
+
+        public static void PrintFinalStocks(Product[] products)
+        {
+            Console.Write("Остатки на складе: ");
+            for (int i = 0;i<products.Length;i++)
+            {
+                Console.WriteLine($"{products[i].GetName()} {products[i].GetStock()}");
+                if (i < products.Length - 1) Console.Write(", ");
+            }
+            Console.WriteLine();   
+        }
+
     }
 }
