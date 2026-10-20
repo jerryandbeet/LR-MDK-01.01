@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace LAB3
 {
@@ -12,6 +13,24 @@ namespace LAB3
                 Console.WriteLine($"{i + 1}. {products[i].GetName()} - {products[i].GetPrice()} руб., {products[i].GetStock()} шт.");
             }
             Console.WriteLine();
+        }
+        public static void ProcessTransaction(int[] order, Product[] products)
+        {
+            for (int i = 0;i < order.Length;i++)
+            {
+                if (order[i]> products[i].GetStock())
+                {
+                    Console.WriteLine($"Заказ отменен! Товара \"{products[i].GetName()}\" не хватает на складе!\n");
+                    return;
+                }
+            }
+            decimal totalsum = 0;
+            for (int i = 0;i<order.Length ; i++)
+            {
+                products[i].ReduceStock(order[i]);
+                totalsum += order[i] * products[i].GetPrice();
+            }
+            Console.WriteLine($"Стоимость заказа: {totalsum} руб.\n");
         }
     }
 }
