@@ -43,6 +43,17 @@ namespace LAB3
             }
             Console.WriteLine();   
         }
+        public static void CollectOrder(int[] order, int productsCount)
+        {
+            while(true)
+            {
+                int itemNumber = InputReader.ReadItemNumber("Введите номер товара (0- конец заказа): ", productsCount);
+                if (itemNumber == 0) break;
+
+                int quantity = InputReader.ReadQuantity("Введите количество: ");
+                order[itemNumber - 1] += quantity;
+            }
+        }
 
     }
 }
