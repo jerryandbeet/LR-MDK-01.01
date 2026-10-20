@@ -38,7 +38,7 @@ namespace LAB3
             Console.Write("Остатки на складе: ");
             for (int i = 0;i<products.Length;i++)
             {
-                Console.WriteLine($"{products[i].GetName()} {products[i].GetStock()}");
+                Console.Write($"{products[i].GetName()} {products[i].GetStock()}");
                 if (i < products.Length - 1) Console.Write(", ");
             }
             Console.WriteLine();   
