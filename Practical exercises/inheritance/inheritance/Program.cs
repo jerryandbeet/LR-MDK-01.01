@@ -12,27 +12,7 @@ namespace inheritance
         {
             List <Product> products = new List <Product> ();
 
-
-            HouseholdСhemical grass = new HouseholdСhemical ();
-            grass.SetName("Антижир");
-            grass.SetPrice(100);
-            grass.SetSoldCount(301);
-
-            Food meat = new Food ();
-            meat.SetName("Сосиски");
-            meat.SetPrice(100);
-            meat.SetSoldCount(6);
-
-            Product prod = new Product ();
-            prod.SetName("Спички");
-            prod.SetPrice(100);
-            prod.SetSoldCount(10);
-
-            products.Add(grass);
-            products.Add(meat);
-            products.Add(prod);
-
-            foreach(Product product in products)
+            foreach (Product product in products)
             {
                 decimal sum = product.GetPrice() * product.GetSoldCount();
                 decimal sumDiscount = sum * product.CalculateDiscount() / 100;
@@ -42,6 +22,30 @@ namespace inheritance
                     $"Процент скидки: {product.CalculateDiscount()} %\tСумма с учетом скидки:{sum - sumDiscount} руб.");
             }
 
+        }
+        static HouseholdСhemical NewHouseholdСhemical(string name,decimal price,int count)
+        {
+            HouseholdСhemical prod = new HouseholdСhemical();
+            prod.SetName(name);
+            prod.SetPrice(price);
+            prod.SetSoldCount(count);
+            return prod;
+        }
+        static Food NewFood(string name, decimal price, int count)
+        {
+            Food prod = new Food();
+            prod.SetName(name);
+            prod.SetPrice(price);
+            prod.SetSoldCount(count);
+            return prod;
+        }
+        static Product NewProduct(string name, decimal price, int count)
+        {
+            Product prod = new Product();
+            prod.SetName(name);
+            prod.SetPrice(price);
+            prod.SetSoldCount(count);
+            return prod;
         }
     }
 }
