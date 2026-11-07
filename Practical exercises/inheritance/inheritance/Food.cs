@@ -8,5 +8,17 @@ namespace inheritance
 {
     public class Food : Product
     {
+        public override int CalculateDiscount()
+        {
+            if (soldCount_ > 5 && soldCount_ < 10)
+            {
+                return 15;
+            }
+            else if (soldCount_ > 10)
+            {
+                return 25;
+            }else return 0;
+
+        }
     }
 }
