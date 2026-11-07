@@ -10,20 +10,20 @@ namespace inheritance
     {
         public override int CalculateDiscount()
         {
-            if (soldCount_ > 20 && soldCount_ < 150)
+            if (soldCount_ >= 20 && soldCount_ < 150)
             {
                 return 10;
             }
-            else if (soldCount_ > 150 && soldCount_ < 300)
+            else if (soldCount_ >= 150 && soldCount_ < 300)
             {
                 return 30;
             }
             else
-            if (soldCount_ > 300)
+            if (soldCount_ >= 300)
             {
                 return 50;
             }
-            else return 0;
+            else return base.CalculateDiscount();
             
         }
     }
