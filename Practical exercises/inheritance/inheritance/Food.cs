@@ -14,7 +14,7 @@ namespace inheritance
             {
                 return 15;
             }
-            else if (soldCount_ >= 10)
+            else if (soldCount_ > 10)
             {
                 return 25;
             }else return base.CalculateDiscount();
