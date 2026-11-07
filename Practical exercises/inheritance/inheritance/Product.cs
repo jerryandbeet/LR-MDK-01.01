@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace inheritance
 {
-    public class Tovar
+    public class Product
     {
         protected string name_;
         protected decimal price_;
