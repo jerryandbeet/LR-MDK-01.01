@@ -12,6 +12,14 @@ namespace inheritance
         {
             List <Product> products = new List <Product> ();
 
+            products.Add (NewProduct("Спички",10,4));
+            products.Add(NewHouseholdСhemical("Антижир", 210, 21));
+            products.Add(NewHouseholdСhemical("Fairy", 98, 151));
+            products.Add(NewHouseholdСhemical("Grass", 159, 302));
+            products.Add(NewFood("Сосиски", 100, 6));
+            products.Add(NewFood("Макароны", 66, 11));
+            products.Add(NewFood("Рис", 43, 3));
+
             foreach (Product product in products)
             {
                 decimal sum = product.GetPrice() * product.GetSoldCount();
