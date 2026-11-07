@@ -12,13 +12,13 @@ namespace inheritance
         {
             List <Product> products = new List <Product> ();
 
-            products.Add (NewProduct("Спички",10,4));
-            products.Add(NewHouseholdСhemical("Антижир", 210, 21));
-            products.Add(NewHouseholdСhemical("Fairy", 98, 151));
-            products.Add(NewHouseholdСhemical("Grass", 159, 302));
-            products.Add(NewFood("Сосиски", 100, 6));
-            products.Add(NewFood("Макароны", 66, 11));
-            products.Add(NewFood("Рис", 43, 3));
+            products.Add (NewProduct(new Product (), "Спички",10,4));
+            products.Add(NewProduct(new HouseholdСhemical(), "Антижир", 210, 21));
+            products.Add(NewProduct(new HouseholdСhemical(),"Fairy", 98, 151));
+            products.Add(NewProduct(new HouseholdСhemical(),"Grass", 159, 302));
+            products.Add(NewProduct(new Food(), "Сосиски", 100, 6));
+            products.Add(NewProduct(new Food(), "Макароны", 66, 11));
+            products.Add(NewProduct(new Food(), "Рис", 43, 3));
 
             foreach (Product product in products)
             {
@@ -31,25 +31,9 @@ namespace inheritance
             }
 
         }
-        static HouseholdСhemical NewHouseholdСhemical(string name,decimal price,int count)
+
+        static Product NewProduct(Product prod, string name, decimal price, int count)
         {
-            HouseholdСhemical prod = new HouseholdСhemical();
-            prod.SetName(name);
-            prod.SetPrice(price);
-            prod.SetSoldCount(count);
-            return prod;
-        }
-        static Food NewFood(string name, decimal price, int count)
-        {
-            Food prod = new Food();
-            prod.SetName(name);
-            prod.SetPrice(price);
-            prod.SetSoldCount(count);
-            return prod;
-        }
-        static Product NewProduct(string name, decimal price, int count)
-        {
-            Product prod = new Product();
             prod.SetName(name);
             prod.SetPrice(price);
             prod.SetSoldCount(count);
