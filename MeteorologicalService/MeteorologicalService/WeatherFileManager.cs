@@ -8,9 +8,9 @@ using System.Net.Http.Headers;
 
 namespace MeteorologicalService
 {
-    public class WeatherFileManager
+    public static class WeatherFileManager
     {
-        public WeatherRecord[] GetRecords(string path)
+        public static WeatherRecord[] GetRecords(string path)
         {
             if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             {
