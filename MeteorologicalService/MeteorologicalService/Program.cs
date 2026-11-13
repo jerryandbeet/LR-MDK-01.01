@@ -10,16 +10,18 @@ namespace MeteorologicalService
             if (weatherRecords.Length == 0) return;
             Console.Write("Введите название города: ");
             string city = Console.ReadLine();
-            Console.Write("\nВведите дату: ");
+            Console.Write("Введите дату: ");
             DateTime date = DateTime.Parse(Console.ReadLine());
             bool recordExists = false;
             double snowTime = 0;
             double windTime = 0;
             double rainTime = 0;
+            Console.WriteLine($"\nНайденные записи о погоде: ");
             foreach (var weatherRecord in weatherRecords)
             {
                 if (weatherRecord.City.ToLower() == city.ToLower() && weatherRecord.Date == date)
                 {
+                    weatherRecord.PrintRecord();
                     switch (weatherRecord.Type)
                     {
                         case WeatherType.Rain:
@@ -43,6 +45,7 @@ namespace MeteorologicalService
             }
             else
             {
+                Console.WriteLine();
                 double percentSnow = (snowTime / 24) * 100;
                 double percentWind = (windTime / 24) * 100;
                 double percentRain = (rainTime / 24) * 100;

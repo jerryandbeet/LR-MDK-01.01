@@ -19,7 +19,7 @@ namespace MeteorologicalService
 
         public void PrintRecord()
         {
-            Console.WriteLine($"{Date.ToShortDateString()} {City} | Погода: {Type} | Длительность: {Duration} ч.");
+            Console.WriteLine($"Погода: {Type}\t| Длительность: {Duration} ч.");
         }
     }
 }
